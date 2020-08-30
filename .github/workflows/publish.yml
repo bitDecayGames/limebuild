@@ -12,9 +12,8 @@ jobs:
       - name: Build and push Docker image to Github Packages
         uses: docker/build-push-action@v1.1.0
         with:
-          dockerfile: Dockerfile
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: bitDecayGames/lime-bulid/lime-build
+          repository: bitdecaygames/lime-bulid/lime-build
           tags: latest
