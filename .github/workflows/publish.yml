@@ -1,0 +1,20 @@
+name: Publish
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        
+      - name: Build and push Docker image to Github Packages
+        uses: docker/build-push-action@v1.1.0
+        with:
+          dockerfile: .github/resources/Dockerfile
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: bitdecaygames/lime-build
+          tags: latest
