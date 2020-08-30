@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 RUN apt-get update && apt-get install -y software-properties-common
 RUN add-apt-repository ppa:haxe/releases -y
-RUN apt-get update -y && apt-get install -y haxe
+RUN apt-get update -y && apt-get install -y haxe zip
 RUN mkdir /var/haxelib
 RUN haxelib setup /var/haxelib
 RUN yes | haxelib install lime
