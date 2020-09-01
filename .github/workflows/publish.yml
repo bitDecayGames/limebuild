@@ -14,5 +14,5 @@ jobs:
         with:
           username: mwingfield
           password: ${{ secrets.DOCKER_HUB_API_KEY }}
-          repository: "mwingfield/limebuild"
+          repository: "bitdecaygames/limebuild"
           tags: "latest"
