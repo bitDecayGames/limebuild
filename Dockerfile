@@ -2,7 +2,8 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y software-properties-common
 RUN add-apt-repository ppa:haxe/releases -y
 # install zip and git to be able to package the build and for getting dependencies
-RUN apt-get update -y && apt-get install -y haxe zip git
+# install java for lime html5 builds with the `-final` flag. needed for minifying among other things
+RUN apt-get update -y && apt-get install -y haxe zip git default-jre
 RUN mkdir /var/haxelib
 RUN haxelib setup /var/haxelib
 RUN yes | haxelib install lime
