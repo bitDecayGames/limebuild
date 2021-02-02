@@ -1,1 +1,1 @@
-docker build -t bitdecaygames/limebuild .
+docker build -t bitdecaygames/limebuild:latest .
