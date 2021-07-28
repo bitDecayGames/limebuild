@@ -1,0 +1,2 @@
+# runs the `dive` utility which helps identify where data is coming from in a docker image
+docker run --rm -it -v //var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest bitdecaygames/limebuild
