@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:20.04
 
 # the versions of the linux/haxe ecosystem to install. Update these when it's time to upgrade
 # these versions must coordinate with a version available here: https://launchpad.net/~haxe/+archive/ubuntu/releases
