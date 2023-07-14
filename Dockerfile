@@ -3,7 +3,7 @@ FROM ubuntu:latest
 # the versions of the linux/haxe ecosystem to install. Update these when it's time to upgrade
 # these versions must coordinate with a version available here: https://launchpad.net/~haxe/+archive/ubuntu/releases
 ENV UBUNTU_VERSION=20.04.1
-ENV HAXE_VERSION=4.2.3
+ENV HAXE_VERSION=4.2.5
 ENV LIME_VERSION=7.9.0
 
 # this env var is read by haxelib and will hopefully keep us from having to run `haxelib setup` during
