@@ -2,9 +2,9 @@ FROM ubuntu:20.04
 
 # the versions of the linux/haxe ecosystem to install. Update these when it's time to upgrade
 # these versions must coordinate with a version available here: https://launchpad.net/~haxe/+archive/ubuntu/releases
-ENV UBUNTU_VERSION=20.04.1
-ENV HAXE_VERSION=4.2.5
-ENV LIME_VERSION=7.9.0
+ENV HAXE_VERSION=4.3.4
+ENV DISTRO_VERSION=bpo20.04.1
+ENV LIME_VERSION=8.1.2
 
 # this env var is read by haxelib and will hopefully keep us from having to run `haxelib setup` during
 # github actions
@@ -24,13 +24,13 @@ RUN apt-get install --no-install-recommends -y \
         zip \
         git \
         default-jre \
-        haxe=1:${HAXE_VERSION}-1~ubuntu${UBUNTU_VERSION}~ppa1 \
+        haxe=1:${HAXE_VERSION}-1~${DISTRO_VERSION} \
     && rm -rf /var/lib/apt/lists/*
 
 
 # setup haxelib and install/setup lime
-RUN mkdir $HAXELIB_PATH && \
-    haxelib setup $HAXELIB_PATH && \
+RUN mkdir ${HAXELIB_PATH} && \
+    haxelib setup ${HAXELIB_PATH} && \
     haxelib install lime ${LIME_VERSION} --always && \
     haxelib run lime setup --always
 
